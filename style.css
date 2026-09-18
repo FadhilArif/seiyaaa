@@ -999,3 +999,224 @@ details[open] .history-chev { transform: rotate(180deg); }
   .test-digit { min-height: 44px; font-size: 0.95rem; }
   .test-topbar { padding: 10px 40px; }
 }
+/* ============================================================
+   INSTRUCTION PAGE
+   ============================================================ */
+.instruction-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 40px);
+  max-width: 820px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.instruction-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.instruction-header h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  margin: 4px 0 0;
+}
+
+.instruction-pkg {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.instruction-lead {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4a5a72;
+  margin: 0 0 20px;
+}
+
+.instruction-lead strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.instruction-body {
+  margin-bottom: 20px;
+}
+
+/* Example layout untuk Kraepelin */
+.example-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 22px;
+  background: var(--blue-subtle);
+  border: 1px solid #d6e5fb;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+
+.example-column {
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.05;
+  text-align: center;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.example-arrow {
+  font-size: 1.5rem;
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.example-results {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.example-results > div {
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 200px;
+}
+
+.example-results strong {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+/* Grid tips */
+.instruction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.tip {
+  padding: 14px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.tip b {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.tip small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.tip small b {
+  display: inline;
+  color: var(--blue-dark);
+  font-weight: 800;
+}
+
+/* Warning box */
+.warning-box {
+  padding: 12px 16px;
+  background: #f0f7ff;
+  border-left: 3px solid var(--blue);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #5a6b82;
+  margin: 16px 0 22px;
+}
+
+.warning-box strong {
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+
+/* Full-width button */
+.btn-block {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+}
+
+/* Answer buttons (MCQ dalam test view) */
+.test-keypad-answer {
+  grid-template-columns: 1fr !important;
+  max-width: 640px;
+}
+
+.test-answer {
+  text-align: left;
+  padding: 14px 16px;
+  min-height: 52px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.test-answer:hover {
+  background: var(--soft);
+  border-color: #c6d8ee;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .instruction-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .instruction-pkg {
+    align-self: flex-start;
+  }
+
+  .example-layout {
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .example-arrow {
+    transform: rotate(90deg);
+  }
+
+  .example-results > div {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .instruction-grid {
+    grid-template-columns: 1fr;
+  }
+}
