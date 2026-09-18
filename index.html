@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f8fc">
+<title>MyPsych — Prototype UI Baru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- ============================================================
+       SIDEBAR
+       ============================================================ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-logo">🧠</div>
+      <div class="brand-text">
+        <strong>MyPsych</strong>
+        <small>Latihan Psikotes</small>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-label">MENU</div>
+      <a class="nav-item" data-page="dashboard">
+        <span class="nav-icon">🏠</span>
+        <span>Dashboard</span>
+      </a>
+      <a class="nav-item" data-page="history">
+        <span class="nav-icon">📜</span>
+        <span>Histori</span>
+      </a>
+
+      <div class="sidebar-label">KATEGORI</div>
+      <a class="nav-item nav-highlight" data-page="kraepelin">
+        <span class="nav-icon">🔥</span>
+        <span>Kraepelin</span>
+        <span class="nav-tag">Populer</span>
+      </a>
+      <a class="nav-item" data-page="skd">
+        <span class="nav-icon">📘</span>
+        <span>SKD (CPNS)</span>
+      </a>
+      <a class="nav-item" data-page="psikotes">
+        <span class="nav-icon">🧩</span>
+        <span>Psikotes Umum</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar">T</div>
+        <div class="user-info">
+          <strong>testbg</strong>
+          <small>Akun peserta</small>
+        </div>
+      </div>
+      <button class="logout-btn" type="button">
+        <span>🚪</span>
+        <span>Keluar</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class="main">
+
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <h1 class="page-title" id="pageTitle">Dashboard</h1>
+      <div class="topbar-user">
+        <div class="user-avatar small">T</div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- ============================================================
+           PAGE: DASHBOARD
+           ============================================================ -->
+      <section class="page active" id="page-dashboard">
+        <div class="hero-card">
+          <div class="hero-text">
+            <div class="eyebrow">SELAMAT DATANG</div>
+            <h2>Halo, <span class="text-blue">testbg</span> 👋</h2>
+            <p class="hero-sub">Pilih kategori latihan yang sesuai kebutuhanmu. Semua gratis, tanpa batas.</p>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>24</strong>
+              <span>Total tes</span>
+            </div>
+            <div class="hero-stat">
+              <strong>85%</strong>
+              <span>Skor terakhir</span>
+            </div>
+            <div class="hero-stat">
+              <strong>92%</strong>
+              <span>Kecepatan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <h3>Kategori Latihan</h3>
+          <p>3 kategori utama untuk berbagai kebutuhan seleksi.</p>
+        </div>
+
+        <div class="category-grid">
+
+          <!-- Andalan -->
+          <article class="category-card category-highlight">
+            <div class="category-badge">🔥 UNGGULAN</div>
+            <div class="category-icon">🧮</div>
+            <h4>Kraepelin</h4>
+            <p>Tes ritme kerja paling ikonik di seleksi Indonesia. Latih kecepatan, ketelitian, dan ketahanan mentalmu.</p>
+            <div class="category-meta">
+              <span>1 tes · 50 kolom · 13 menit</span>
+            </div>
+            <button class="btn btn-primary" data-page="kraepelin">Mulai Latihan →</button>
+          </article>
+
+          <!-- SKD -->
+          <article class="category-card">
+            <div class="category-icon icon-blue">📘</div>
+            <h4>SKD (CPNS)</h4>
+            <p>Seleksi Kompetensi Dasar untuk CPNS &amp; PPPK. TWK, TIU, dan TKP sesuai kisi-kisi resmi.</p>
+            <div class="category-meta">
+              <span>3 kategori · 110 soal</span>
+            </div>
+            <button class="btn btn-secondary" data-page="skd">Lihat Kategori →</button>
+          </article>
+
+          <!-- Psikotes Umum -->
+          <article class="category-card">
+            <div class="category-icon icon-green">🧩</div>
+            <h4>Psikotes Umum</h4>
+            <p>Tes penalaran, verbal, numerik, dan logika untuk seleksi kerja umum, BUMN, dan perusahaan swasta.</p>
+            <div class="category-meta">
+              <span>6 tes · 3 paket masing-masing</span>
+            </div>
+            <button class="btn btn-secondary" data-page="psikotes">Lihat Kategori →</button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PAGE: SKD
+           ============================================================ -->
+      <section class="page" id="page-skd">
+        <div class="section-head">
+          <div class="eyebrow">SELEKSI KOMPETENSI DASAR</div>
+          <h2>SKD (CPNS &amp; PPPK)</h2>
+          <p class="muted">3 kategori sesuai kisi-kisi resmi BKN. Dikerjakan dalam satu sesi dengan timer per kategori.</p>
+        </div>
+
+        <div class="skd-grid">
+
+          <!-- TWK -->
+          <article class="skd-card">
+            <div class="skd-badge coming-soon">SEGERA</div>
+            <div class="skd-icon">🇮🇩</div>
+            <h4>TWK</h4>
+            <p class="skd-fullname">Tes Wawasan Kebangsaan</p>
+            <ul class="skd-topics">
+              <li>Nasionalisme</li>
+              <li>Integritas</li>
+              <li>Bela Negara</li>
+              <li>Pilar Negara</li>
+              <li>Bahasa Negara</li>
+            </ul>
+            <div class="skd-meta">
+              <span>30 soal</span>
+              <span>·</span>
+              <span>25 menit</span>
+            </div>
+          </article>
+
+          <!-- TIU -->
+          <article class="skd-card skd-active" data-page="tiu">
+            <div class="skd-icon icon-blue">🧠</div>
+            <h4>TIU</h4>
+            <p class="skd-fullname">Tes Intelegensi Umum</p>
+            <ul class="skd-topics">
+              <li>Kemampuan Verbal</li>
+              <li>Kemampuan Numerik</li>
+              <li>Kemampuan Figural</li>
+            </ul>
+            <div class="skd-meta">
+              <span>35 soal</span>
+              <span>·</span>
+              <span>40 menit</span>
+            </div>
+          </article>
+
+          <!-- TKP -->
+          <article class="skd-card">
+            <div class="skd-badge coming-soon">SEGERA</div>
+            <div class="skd-icon">🤝</div>
+            <h4>TKP</h4>
+            <p class="skd-fullname">Tes Karakteristik Pribadi</p>
+            <ul class="skd-topics">
+              <li>Pelayanan Publik</li>
+              <li>Jejaring Kerja</li>
+              <li>Sosial Budaya</li>
+              <li>TIK</li>
+              <li>Profesionalisme</li>
+              <li>Anti Radikal</li>
+            </ul>
+            <div class="skd-meta">
+              <span>45 soal</span>
+              <span>·</span>
+              <span>35 menit</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PAGE: TIU DETAIL
+           ============================================================ -->
+      <section class="page" id="page-tiu">
+        <button class="back-link" data-page="skd">← Kembali ke SKD</button>
+
+        <div class="section-head">
+          <div class="eyebrow">SKD · TES INTELEGENSI UMUM</div>
+          <h2>TIU — Tes Intelegensi Umum</h2>
+          <p class="muted">3 kemampuan utama. Setiap kemampuan bisa dilatih per sub-tes dengan 3 paket soal.</p>
+        </div>
+
+        <!-- Verbal -->
+        <div class="tiu-group">
+          <div class="tiu-head">
+            <div class="tiu-head-icon icon-blue">📝</div>
+            <div>
+              <h4>Kemampuan Verbal</h4>
+              <p>Memahami makna kata dan hubungan antar-konsep.</p>
+            </div>
+          </div>
+          <div class="test-grid">
+            <a class="test-item">
+              <div class="test-icon">🔤</div>
+              <div class="test-info">
+                <strong>Sinonim Verbal</strong>
+                <small>3 paket · 20 soal</small>
+              </div>
+              <span class="test-arrow">→</span>
+            </a>
+            <a class="test-item">
+              <div class="test-icon">🔗</div>
+              <div class="test-info">
+                <strong>Analogi</strong>
+                <small>3 paket · 20 soal</small>
+              </div>
+              <span class="test-arrow">→</span>
+            </a>
+            <a class="test-item">
+              <div class="test-icon">🧠</div>
+              <div class="test-info">
+                <strong>Silogisme</strong>
+                <small>3 paket · 20 soal</small>
+              </div>
+              <span class="test-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Numerik -->
+        <div class="tiu-group">
+          <div class="tiu-head">
+            <div class="tiu-head-icon icon-blue">🔢</div>
+            <div>
+              <h4>Kemampuan Numerik</h4>
+              <p>Logika angka, deret, persentase, dan operasi hitung.</p>
+            </div>
+          </div>
+          <div class="test-grid">
+            <a class="test-item">
+              <div class="test-icon">➗</div>
+              <div class="test-info">
+                <strong>Kuantitatif</strong>
+                <small>3 paket · 20 soal</small>
+              </div>
+              <span class="test-arrow">→</span>
+            </a>
+            <a class="test-item">
+              <div class="test-icon">🔢</div>
+              <div class="test-info">
+                <strong>Numerical</strong>
+                <small>3 paket · 20 soal</small>
+              </div>
+              <span class="test-arrow">→</span>
+            </a>
+            <a class="test-item test-disabled">
+              <div class="test-icon">🧮</div>
+              <div class="test-info">
+                <strong>Berhitung Cepat</strong>
+                <small>Segera hadir</small>
+              </div>
+              <span class="badge-coming">Segera</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Figural -->
+        <div class="tiu-group">
+          <div class="tiu-head">
+            <div class="tiu-head-icon icon-blue">🎨</div>
+            <div>
+              <h4>Kemampuan Figural</h4>
+              <p>Pola visual, hubungan gambar, dan penalaran spasial.</p>
+            </div>
+          </div>
+          <div class="test-grid">
+            <a class="test-item test-disabled">
+              <div class="test-icon">🖼️</div>
+              <div class="test-info">
+                <strong>Analogi Figural</strong>
+                <small>Segera hadir</small>
+              </div>
+              <span class="badge-coming">Segera</span>
+            </a>
+            <a class="test-item test-disabled">
+              <div class="test-icon">❌</div>
+              <div class="test-info">
+                <strong>Ketidaksamaan</strong>
+                <small>Segera hadir</small>
+              </div>
+              <span class="badge-coming">Segera</span>
+            </a>
+            <a class="test-item test-disabled">
+              <div class="test-icon">🔢</div>
+              <div class="test-info">
+                <strong>Serial</strong>
+                <small>Segera hadir</small>
+              </div>
+              <span class="badge-coming">Segera</span>
+            </a>
+            <a class="test-item">
+              <div class="test-icon">🧩</div>
+              <div class="test-info">
+                <strong>Tes Kognitif</strong>
+                <small>3 paket · 20 soal</small>
+              </div>
+              <span class="test-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PAGE: PSIKOTES UMUM
+           ============================================================ -->
+      <section class="page" id="page-psikotes">
+        <div class="section-head">
+          <div class="eyebrow">PSIKOTES UMUM</div>
+          <h2>Psikotes Umum</h2>
+          <p class="muted">Tes penalaran, verbal, numerik, dan logika untuk seleksi kerja umum.</p>
+        </div>
+
+        <div class="test-grid large">
+          <a class="test-item">
+            <div class="test-icon">➗</div>
+            <div class="test-info">
+              <strong>Kuantitatif</strong>
+              <small>3 paket · 20 soal</small>
+            </div>
+            <span class="test-arrow">→</span>
+          </a>
+          <a class="test-item">
+            <div class="test-icon">🔢</div>
+            <div class="test-info">
+              <strong>Numerical</strong>
+              <small>3 paket · 20 soal</small>
+            </div>
+            <span class="test-arrow">→</span>
+          </a>
+          <a class="test-item">
+            <div class="test-icon">🔤</div>
+            <div class="test-info">
+              <strong>Sinonim Verbal</strong>
+              <small>3 paket · 20 soal</small>
+            </div>
+            <span class="test-arrow">→</span>
+          </a>
+          <a class="test-item">
+            <div class="test-icon">🧠</div>
+            <div class="test-info">
+              <strong>Silogisme</strong>
+              <small>3 paket · 20 soal</small>
+            </div>
+            <span class="test-arrow">→</span>
+          </a>
+          <a class="test-item">
+            <div class="test-icon">🔗</div>
+            <div class="test-info">
+              <strong>Analogi</strong>
+              <small>3 paket · 20 soal</small>
+            </div>
+            <span class="test-arrow">→</span>
+          </a>
+          <a class="test-item">
+            <div class="test-icon">🧩</div>
+            <div class="test-info">
+              <strong>Tes Kognitif</strong>
+              <small>3 paket · 20 soal</small>
+            </div>
+            <span class="test-arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PAGE: HISTORY (Grouped)
+           ============================================================ -->
+      <section class="page" id="page-history">
+        <div class="section-head">
+          <div class="eyebrow">RIWAYAT LATIHAN</div>
+          <h2>Histori Tes</h2>
+          <p class="muted">Dikelompokkan per kategori, urut berdasarkan tes terbaru.</p>
+        </div>
+
+        <!-- Grup: Andalan -->
+        <details class="history-group" open>
+          <summary class="history-summary">
+            <span class="history-icon">🔥</span>
+            <span class="history-title">Kraepelin</span>
+            <span class="history-count">3 tes</span>
+            <span class="history-chev">▾</span>
+          </summary>
+          <div class="history-list">
+            <div class="history-item">
+              <div class="history-item-main">
+                <strong>Kraepelin — Paket 1</strong>
+                <small>15 Sep 2026 · 13:23</small>
+              </div>
+              <div class="history-score">53%</div>
+              <button class="btn btn-ghost small">Cetak PDF</button>
+            </div>
+            <div class="history-item">
+              <div class="history-item-main">
+                <strong>Kraepelin — Paket 2</strong>
+                <small>14 Sep 2026 · 10:11</small>
+              </div>
+              <div class="history-score">61%</div>
+              <button class="btn btn-ghost small">Cetak PDF</button>
+            </div>
+            <div class="history-item">
+              <div class="history-item-main">
+                <strong>Kraepelin — Paket 1</strong>
+                <small>13 Sep 2026 · 19:02</small>
+              </div>
+              <div class="history-score">48%</div>
+              <button class="btn btn-ghost small">Cetak PDF</button>
+            </div>
+          </div>
+        </details>
+
+        <!-- Grup: SKD -->
+        <details class="history-group" open>
+          <summary class="history-summary">
+            <span class="history-icon">📘</span>
+            <span class="history-title">SKD (CPNS)</span>
+            <span class="history-count">5 tes</span>
+            <span class="history-chev">▾</span>
+          </summary>
+          <div class="history-list">
+
+            <!-- Sub: TWK -->
+            <div class="history-subgroup">
+              <div class="history-subhead">🇮🇩 TWK — Tes Wawasan Kebangsaan</div>
+              <div class="history-item">
+                <div class="history-item-main">
+                  <strong>TWK — Paket 1</strong>
+                  <small>13 Sep 2026 · 08:30</small>
+                </div>
+                <div class="history-score">72%</div>
+                <button class="btn btn-ghost small">Cetak PDF</button>
+              </div>
+            </div>
+
+            <!-- Sub: TIU Verbal -->
+            <div class="history-subgroup">
+              <div class="history-subhead">📝 TIU — Kemampuan Verbal</div>
+              <div class="history-item">
+                <div class="history-item-main">
+                  <strong>Sinonim Verbal — Paket 1</strong>
+                  <small>12 Sep 2026 · 15:44</small>
+                </div>
+                <div class="history-score">85%</div>
+                <button class="btn btn-ghost small">Cetak PDF</button>
+              </div>
+              <div class="history-item">
+                <div class="history-item-main">
+                  <strong>Analogi — Paket 1</strong>
+                  <small>11 Sep 2026 · 20:15</small>
+                </div>
+                <div class="history-score">70%</div>
+                <button class="btn btn-ghost small">Cetak PDF</button>
+              </div>
+            </div>
+
+            <!-- Sub: TIU Numerik -->
+            <div class="history-subgroup">
+              <div class="history-subhead">🔢 TIU — Kemampuan Numerik</div>
+              <div class="history-item">
+                <div class="history-item-main">
+                  <strong>Kuantitatif — Paket 2</strong>
+                  <small>12 Sep 2026 · 09:10</small>
+                </div>
+                <div class="history-score">78%</div>
+                <button class="btn btn-ghost small">Cetak PDF</button>
+              </div>
+            </div>
+
+            <!-- Sub: TIU Figural -->
+            <div class="history-subgroup">
+              <div class="history-subhead">🎨 TIU — Kemampuan Figural</div>
+              <div class="history-item">
+                <div class="history-item-main">
+                  <strong>Tes Kognitif — Paket 1</strong>
+                  <small>10 Sep 2026 · 14:00</small>
+                </div>
+                <div class="history-score">82%</div>
+                <button class="btn btn-ghost small">Cetak PDF</button>
+              </div>
+            </div>
+
+          </div>
+        </details>
+
+        <!-- Grup: Psikotes Umum -->
+        <details class="history-group">
+          <summary class="history-summary">
+            <span class="history-icon">🧩</span>
+            <span class="history-title">Psikotes Umum</span>
+            <span class="history-count">4 tes</span>
+            <span class="history-chev">▾</span>
+          </summary>
+          <div class="history-list">
+            <div class="history-item">
+              <div class="history-item-main">
+                <strong>Numerical — Paket 1</strong>
+                <small>09 Sep 2026 · 11:20</small>
+              </div>
+              <div class="history-score">68%</div>
+              <button class="btn btn-ghost small">Cetak PDF</button>
+            </div>
+            <div class="history-item">
+              <div class="history-item-main">
+                <strong>Silogisme — Paket 3</strong>
+                <small>08 Sep 2026 · 16:05</small>
+              </div>
+              <div class="history-score">74%</div>
+              <button class="btn btn-ghost small">Cetak PDF</button>
+            </div>
+            <div class="history-item">
+              <div class="history-item-main">
+                <strong>Kuantitatif — Paket 1</strong>
+                <small>07 Sep 2026 · 20:50</small>
+              </div>
+              <div class="history-score">62%</div>
+              <button class="btn btn-ghost small">Cetak PDF</button>
+            </div>
+            <div class="history-item">
+              <div class="history-item-main">
+                <strong>Sinonim Verbal — Paket 2</strong>
+                <small>06 Sep 2026 · 13:40</small>
+              </div>
+              <div class="history-score">80%</div>
+              <button class="btn btn-ghost small">Cetak PDF</button>
+            </div>
+          </div>
+        </details>
+
+      </section>
+
+    </div>
+  </main>
+
+</div>
+
+<!-- ============================================================
+     TEST VIEW (Fullscreen, sidebar & topbar hilang)
+     ============================================================ -->
+<div class="test-view" id="testView">
+  <header class="test-topbar">
+    <button class="test-home" id="testHome">⌂</button>
+    <div class="test-meta">
+      <div class="test-meta-item">
+        <span>Tes</span>
+        <strong>Kraepelin</strong>
+      </div>
+      <div class="test-meta-item">
+        <span>Soal</span>
+        <strong>1/26</strong>
+      </div>
+      <div class="test-meta-item">
+        <span>Waktu</span>
+        <strong>15s</strong>
+      </div>
+    </div>
+    <div class="test-progress">
+      <div class="test-progress-fill" style="width:0%"></div>
+    </div>
+  </header>
+
+  <div class="test-body">
+    <div class="test-question-card">
+      <div class="test-question-label">JUMLAHKAN</div>
+      <div class="test-number">7</div>
+      <div class="test-mark">?</div>
+      <div class="test-number">3</div>
+    </div>
+
+    <div class="test-keypad">
+      <button class="test-digit">7</button>
+      <button class="test-digit">8</button>
+      <button class="test-digit">9</button>
+      <button class="test-digit">4</button>
+      <button class="test-digit">5</button>
+      <button class="test-digit">6</button>
+      <button class="test-digit">1</button>
+      <button class="test-digit">2</button>
+      <button class="test-digit">3</button>
+      <button class="test-digit zero">0</button>
+    </div>
+
+    <div class="test-hint">Keyboard 0–9 juga bisa digunakan.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  const $ = (sel) => document.querySelector(sel);
+  const $$ = (sel) => document.querySelectorAll(sel);
+
+  const PAGE_TITLES = {
+    dashboard: 'Dashboard',
+    history: 'Histori',
+    skd: 'SKD (CPNS)',
+    tiu: 'TIU — Tes Intelegensi Umum',
+    psikotes: 'Psikotes Umum',
+    kraepelin: 'Kraepelin',
+  };
+
+  function showPage(name) {
+    // Kraepelin langsung buka test view
+    if (name === 'kraepelin') {
+      openTest();
+      return;
+    }
+
+    $$('.page').forEach(p => p.classList.remove('active'));
+    const page = document.getElementById('page-' + name);
+    if (page) {
+      page.classList.add('active');
+      document.getElementById('pageTitle').textContent = PAGE_TITLES[name] || 'MyPsych';
+      // Update active nav
+      $$('.nav-item').forEach(item => {
+        item.classList.toggle('active', item.dataset.page === name);
+      });
+      // Scroll top
+      document.querySelector('.content').scrollTop = 0;
+    }
+
+    closeSidebar();
+  }
+
+  function openTest() {
+    document.getElementById('testView').classList.add('active');
+  }
+
+  function closeTest() {
+    document.getElementById('testView').classList.remove('active');
+  }
+
+  // ---- Sidebar drawer (mobile) ----
+  function openSidebar() {
+    document.getElementById('sidebar').classList.add('open');
+    document.getElementById('sidebarOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebarOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ---- Bind nav items ----
+  document.querySelectorAll('[data-page]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const page = el.dataset.page;
+      if (page) showPage(page);
+    });
+  });
+
+  // ---- Hamburger ----
+  document.getElementById('hamburger')?.addEventListener('click', openSidebar);
+  document.getElementById('sidebarOverlay')?.addEventListener('click', closeSidebar);
+
+  // ---- Test home ----
+  document.getElementById('testHome')?.addEventListener('click', closeTest);
+
+  // ---- Init ----
+  showPage('dashboard');
+
+})();
+</script>
+
+</body>
+</html>
