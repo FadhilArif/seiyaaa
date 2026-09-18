@@ -129,7 +129,7 @@
             <div class="category-meta">
               <span>1 tes · 50 kolom · 13 menit</span>
             </div>
-            <button class="btn btn-primary" data-page="kraepelin">Mulai Latihan →</button>
+            <button class="btn btn-primary" data-test="kraepelin">Mulai Latihan →</button>
           </article>
 
           <!-- SKD -->
@@ -252,7 +252,7 @@
             </div>
           </div>
           <div class="test-grid">
-            <a class="test-item">
+            <a class="test-item" data-test="sinonim">
               <div class="test-icon">🔤</div>
               <div class="test-info">
                 <strong>Sinonim Verbal</strong>
@@ -260,7 +260,7 @@
               </div>
               <span class="test-arrow">→</span>
             </a>
-            <a class="test-item">
+            <a class="test-item" data-test="analogi">
               <div class="test-icon">🔗</div>
               <div class="test-info">
                 <strong>Analogi</strong>
@@ -268,7 +268,7 @@
               </div>
               <span class="test-arrow">→</span>
             </a>
-            <a class="test-item">
+            <a class="test-item" data-test="silogisme">
               <div class="test-icon">🧠</div>
               <div class="test-info">
                 <strong>Silogisme</strong>
@@ -289,7 +289,7 @@
             </div>
           </div>
           <div class="test-grid">
-            <a class="test-item">
+            <a class="test-item" data-test="kuantitatif">
               <div class="test-icon">➗</div>
               <div class="test-info">
                 <strong>Kuantitatif</strong>
@@ -297,7 +297,7 @@
               </div>
               <span class="test-arrow">→</span>
             </a>
-            <a class="test-item">
+            <a class="test-item" data-test="numerical">
               <div class="test-icon">🔢</div>
               <div class="test-info">
                 <strong>Numerical</strong>
@@ -350,7 +350,7 @@
               </div>
               <span class="badge-coming">Segera</span>
             </a>
-            <a class="test-item">
+            <a class="test-item" data-test="kognitif">
               <div class="test-icon">🧩</div>
               <div class="test-info">
                 <strong>Tes Kognitif</strong>
@@ -373,7 +373,7 @@
         </div>
 
         <div class="test-grid large">
-          <a class="test-item">
+          <a class="test-item" data-test="kuantitatif">
             <div class="test-icon">➗</div>
             <div class="test-info">
               <strong>Kuantitatif</strong>
@@ -381,7 +381,7 @@
             </div>
             <span class="test-arrow">→</span>
           </a>
-          <a class="test-item">
+          <a class="test-item" data-test="numerical">
             <div class="test-icon">🔢</div>
             <div class="test-info">
               <strong>Numerical</strong>
@@ -389,7 +389,7 @@
             </div>
             <span class="test-arrow">→</span>
           </a>
-          <a class="test-item">
+          <a class="test-item" data-test="sinonim">
             <div class="test-icon">🔤</div>
             <div class="test-info">
               <strong>Sinonim Verbal</strong>
@@ -397,7 +397,7 @@
             </div>
             <span class="test-arrow">→</span>
           </a>
-          <a class="test-item">
+          <a class="test-item" data-test="silogisme">
             <div class="test-icon">🧠</div>
             <div class="test-info">
               <strong>Silogisme</strong>
@@ -405,7 +405,7 @@
             </div>
             <span class="test-arrow">→</span>
           </a>
-          <a class="test-item">
+          <a class="test-item" data-test="analogi">
             <div class="test-icon">🔗</div>
             <div class="test-info">
               <strong>Analogi</strong>
@@ -413,7 +413,7 @@
             </div>
             <span class="test-arrow">→</span>
           </a>
-          <a class="test-item">
+          <a class="test-item" data-test="kognitif">
             <div class="test-icon">🧩</div>
             <div class="test-info">
               <strong>Tes Kognitif</strong>
@@ -480,7 +480,6 @@
           </summary>
           <div class="history-list">
 
-            <!-- Sub: TWK -->
             <div class="history-subgroup">
               <div class="history-subhead">🇮🇩 TWK — Tes Wawasan Kebangsaan</div>
               <div class="history-item">
@@ -493,7 +492,6 @@
               </div>
             </div>
 
-            <!-- Sub: TIU Verbal -->
             <div class="history-subgroup">
               <div class="history-subhead">📝 TIU — Kemampuan Verbal</div>
               <div class="history-item">
@@ -514,7 +512,6 @@
               </div>
             </div>
 
-            <!-- Sub: TIU Numerik -->
             <div class="history-subgroup">
               <div class="history-subhead">🔢 TIU — Kemampuan Numerik</div>
               <div class="history-item">
@@ -527,7 +524,6 @@
               </div>
             </div>
 
-            <!-- Sub: TIU Figural -->
             <div class="history-subgroup">
               <div class="history-subhead">🎨 TIU — Kemampuan Figural</div>
               <div class="history-item">
@@ -589,6 +585,35 @@
 
       </section>
 
+      <!-- ============================================================
+           PAGE: INSTRUCTION (Preview sebelum mulai tes)
+           ============================================================ -->
+      <section class="page" id="page-instruction">
+        <button class="back-link" id="instructionBack">← Kembali</button>
+
+        <div class="instruction-card">
+          <div class="instruction-header">
+            <div>
+              <div class="eyebrow" id="instructionEyebrow">TES · PAKET 1</div>
+              <h2 id="instructionTitle">Nama Tes</h2>
+            </div>
+            <div class="instruction-pkg" id="instructionPackage">Paket 1</div>
+          </div>
+
+          <p class="instruction-lead" id="instructionLead">Instruksi singkat.</p>
+
+          <div id="instructionBody" class="instruction-body"></div>
+
+          <div class="warning-box">
+            <strong>Catatan latihan:</strong> skor website ini adalah indikator latihan internal, bukan norma resmi seleksi kerja atau diagnosis psikologis.
+          </div>
+
+          <button class="btn btn-primary btn-block" id="startTestBtn">
+            Mulai Tes →
+          </button>
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -603,44 +628,34 @@
     <div class="test-meta">
       <div class="test-meta-item">
         <span>Tes</span>
-        <strong>Kraepelin</strong>
+        <strong id="testTypeLabel">Kraepelin</strong>
       </div>
       <div class="test-meta-item">
         <span>Soal</span>
-        <strong>1/26</strong>
+        <strong id="testQuestionCounter">1/26</strong>
       </div>
       <div class="test-meta-item">
         <span>Waktu</span>
-        <strong>15s</strong>
+        <strong id="testTimeCounter">15s</strong>
       </div>
     </div>
     <div class="test-progress">
-      <div class="test-progress-fill" style="width:0%"></div>
+      <div class="test-progress-fill" id="testProgressFill" style="width:0%"></div>
     </div>
   </header>
 
   <div class="test-body">
-    <div class="test-question-card">
-      <div class="test-question-label">JUMLAHKAN</div>
-      <div class="test-number">7</div>
-      <div class="test-mark">?</div>
-      <div class="test-number">3</div>
+    <div class="test-question-card" id="testQuestionCard">
+      <!-- Diisi oleh JS -->
     </div>
 
-    <div class="test-keypad">
-      <button class="test-digit">7</button>
-      <button class="test-digit">8</button>
-      <button class="test-digit">9</button>
-      <button class="test-digit">4</button>
-      <button class="test-digit">5</button>
-      <button class="test-digit">6</button>
-      <button class="test-digit">1</button>
-      <button class="test-digit">2</button>
-      <button class="test-digit">3</button>
-      <button class="test-digit zero">0</button>
+    <div class="test-keypad" id="testKeypad">
+      <!-- Diisi oleh JS -->
     </div>
 
-    <div class="test-hint">Keyboard 0–9 juga bisa digunakan.</div>
+    <div class="test-hint" id="testHint">
+      <!-- Diisi oleh JS -->
+    </div>
   </div>
 </div>
 
@@ -657,33 +672,128 @@
     skd: 'SKD (CPNS)',
     tiu: 'TIU — Tes Intelegensi Umum',
     psikotes: 'Psikotes Umum',
-    kraepelin: 'Kraepelin',
+    instruction: 'Persiapan Tes',
   };
 
-  function showPage(name) {
-    // Kraepelin langsung buka test view
-    if (name === 'kraepelin') {
-      openTest();
-      return;
-    }
+  // Data instruksi per tes
+  const INSTRUCTIONS = {
+    kraepelin: {
+      name: 'Kraepelin',
+      eyebrow: 'TES ANDALAN · PAKET 1',
+      lead: 'Jumlahkan dua angka yang berdekatan dari <strong>bawah ke atas</strong>. Masukkan <strong>angka satuannya</strong> saja (0–9).',
+      body: `
+        <div class="example-layout">
+          <div class="example-column">8<br>5<br>7<br>3</div>
+          <div class="example-arrow">→</div>
+          <div class="example-results">
+            <div>3 + 7 = 10 <strong>→ 0</strong></div>
+            <div>7 + 5 = 12 <strong>→ 2</strong></div>
+            <div>5 + 8 = 13 <strong>→ 3</strong></div>
+          </div>
+        </div>
+        <div class="instruction-grid">
+          <div class="tip"><b>50 kolom</b><small>Setiap kolom memiliki 26 soal.</small></div>
+          <div class="tip"><b>15 detik / kolom</b><small>Waktu otomatis pindah kolom.</small></div>
+          <div class="tip"><b>Angka satuan</b><small>Contoh: 10 → tulis <b>0</b>, bukan 10.</small></div>
+          <div class="tip"><b>Keyboard</b><small>Angka 0–9 bisa dipakai.</small></div>
+        </div>
+      `,
+    },
+    // Generic template untuk MCQ
+    mcq: {
+      lead: 'Pilih jawaban yang paling tepat. Soal berpindah otomatis setelah kamu memilih atau waktu habis.',
+      body: `
+        <div class="instruction-grid">
+          <div class="tip"><b>20 soal</b><small>Setiap paket berisi 20 soal pilihan ganda.</small></div>
+          <div class="tip"><b>30 detik / soal</b><small>Timer berjalan per soal.</small></div>
+          <div class="tip"><b>A–E jawaban</b><small>Pilih satu jawaban paling tepat.</small></div>
+          <div class="tip"><b>Hasil PDF</b><small>Bisa diunduh setelah selesai.</small></div>
+        </div>
+      `,
+    },
+  };
 
+  const TEST_NAMES = {
+    kraepelin: 'Kraepelin',
+    kuantitatif: 'Kuantitatif',
+    numerical: 'Numerical',
+    sinonim: 'Sinonim Verbal',
+    silogisme: 'Silogisme',
+    analogi: 'Analogi',
+    kognitif: 'Tes Kognitif',
+  };
+
+  let currentTest = null;
+
+  // ---- Navigasi halaman ----
+  function showPage(name) {
     $$('.page').forEach(p => p.classList.remove('active'));
     const page = document.getElementById('page-' + name);
     if (page) {
       page.classList.add('active');
       document.getElementById('pageTitle').textContent = PAGE_TITLES[name] || 'MyPsych';
-      // Update active nav
       $$('.nav-item').forEach(item => {
         item.classList.toggle('active', item.dataset.page === name);
       });
-      // Scroll top
       document.querySelector('.content').scrollTop = 0;
     }
-
     closeSidebar();
   }
 
+  // ---- Instruction ----
+  function openInstruction(testId) {
+    currentTest = testId;
+    const isKraepelin = testId === 'kraepelin';
+    const config = isKraepelin ? INSTRUCTIONS.kraepelin : INSTRUCTIONS.mcq;
+
+    document.getElementById('instructionEyebrow').textContent = 
+      isKraepelin ? 'TES ANDALAN · PAKET 1' : 'TES · PAKET 1';
+    document.getElementById('instructionTitle').textContent = TEST_NAMES[testId] || testId;
+    document.getElementById('instructionPackage').textContent = isKraepelin ? 'Paket 1' : 'Paket 1';
+    document.getElementById('instructionLead').innerHTML = config.lead;
+    document.getElementById('instructionBody').innerHTML = config.body;
+
+    showPage('instruction');
+  }
+
+  // ---- Test View ----
   function openTest() {
+    const testId = currentTest || 'kraepelin';
+    const isKraepelin = testId === 'kraepelin';
+
+    document.getElementById('testTypeLabel').textContent = TEST_NAMES[testId] || testId;
+    document.getElementById('testQuestionCounter').textContent = isKraepelin ? '1/26' : '1/20';
+    document.getElementById('testTimeCounter').textContent = isKraepelin ? '15s' : '30s';
+    document.getElementById('testProgressFill').style.width = '0%';
+
+    const card = document.getElementById('testQuestionCard');
+    const keypad = document.getElementById('testKeypad');
+    const hint = document.getElementById('testHint');
+
+    if (isKraepelin) {
+      card.innerHTML = `
+        <div class="test-question-label">JUMLAHKAN</div>
+        <div class="test-number">7</div>
+        <div class="test-mark">?</div>
+        <div class="test-number">3</div>
+      `;
+      keypad.className = 'test-keypad';
+      keypad.innerHTML = [7,8,9,4,5,6,1,2,3,0].map(d => 
+        `<button class="test-digit ${d === 0 ? 'zero' : ''}">${d}</button>`
+      ).join('');
+      hint.textContent = 'Keyboard 0–9 juga bisa digunakan.';
+    } else {
+      card.innerHTML = `
+        <div class="test-question-label">PERTANYAAN 1</div>
+        <h2 style="text-align:center;margin:0;font-size:1.3rem;">Manakah sinonim dari kata "akurat"?</h2>
+      `;
+      keypad.className = 'test-keypad test-keypad-answer';
+      keypad.innerHTML = ['Tepat','Cepat','Lambat','Besar'].map((opt, i) => 
+        `<button class="test-answer">${String.fromCharCode(65+i)}. ${opt}</button>`
+      ).join('');
+      hint.textContent = 'Pilih satu jawaban. Waktu per soal: 30 detik.';
+    }
+
     document.getElementById('testView').classList.add('active');
   }
 
@@ -704,20 +814,45 @@
     document.body.style.overflow = '';
   }
 
-  // ---- Bind nav items ----
-  document.querySelectorAll('[data-page]').forEach(el => {
+  // ---- Bind event ----
+
+  // Nav items (sidebar)
+  document.querySelectorAll('.nav-item[data-page]').forEach(el => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      const page = el.dataset.page;
-      if (page) showPage(page);
+      showPage(el.dataset.page);
     });
   });
 
-  // ---- Hamburger ----
+  // Buttons dengan data-page (dari dashboard, back link, dll)
+  document.querySelectorAll('[data-page]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(el.dataset.page);
+    });
+  });
+
+  // Test items (dengan data-test) → buka instruction
+  document.querySelectorAll('[data-test]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openInstruction(el.dataset.test);
+    });
+  });
+
+  // Tombol "Mulai Tes" di instruction → buka test view
+  document.getElementById('startTestBtn')?.addEventListener('click', openTest);
+
+  // Back link dari instruction
+  document.getElementById('instructionBack')?.addEventListener('click', () => {
+    showPage('dashboard');
+  });
+
+  // Hamburger & overlay
   document.getElementById('hamburger')?.addEventListener('click', openSidebar);
   document.getElementById('sidebarOverlay')?.addEventListener('click', closeSidebar);
 
-  // ---- Test home ----
+  // Test home
   document.getElementById('testHome')?.addEventListener('click', closeTest);
 
   // ---- Init ----
